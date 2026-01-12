@@ -12,10 +12,10 @@ jobs:
       - name: use node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20.x'
+          node-version: "20.x"
       - run: npm install
       - run: npm run build
-      
+
   test:
     needs: build
     runs-on: ubuntu-latest
@@ -26,7 +26,7 @@ jobs:
       - name: use node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20.x'
+          node-version: "20.x"
       - run: npm install
       - run: npm test
 
@@ -35,7 +35,7 @@ jobs:
 
     permissions:
       contents: write
-      pages: write 
+      pages: write
       id-token: write
 
     environment:
@@ -57,9 +57,8 @@ jobs:
       - name: upload artifacts
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './out'
+          path: "./out"
 
       - name: deploy
         id: deployment
         uses: actions/deploy-pages@v4
-      
